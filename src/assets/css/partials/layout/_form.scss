@@ -1,0 +1,131 @@
+$svg__select-down: btoa('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 319.9 206.6"><g data-name="Layer 2"><path d="m143.05 199.55-136-136a23.9 23.9 0 0 1 0-33.9l22.6-22.6a23.9 23.9 0 0 1 33.9 0l96.4 96.4 96.4-96.4a23.9 23.9 0 0 1 33.9 0l22.6 22.6a23.9 23.9 0 0 1 0 33.9l-136 136a23.78 23.78 0 0 1-33.8 0Z" style="fill:#{$color__primary}" data-name="Layer 1"/></g></svg>');
+
+form {
+    .frm_form_fields {
+        padding-bottom: 70px;
+    }
+
+    input {
+      font-size: 18px !important;
+      letter-spacing: tracking(150);
+      border-bottom-color: $color__primary !important;
+
+      &::placeholder {
+          color: $color__secondary !important;
+          font-size: 18px !important;
+    }
+
+        @include mobile-break {
+            height: auto !important;
+            padding: 20px 145px 20px 0 !important;
+        }
+    }
+
+    textarea {
+        border: 1px solid $color__primary !important;
+        font-size: 18px !important;
+    }
+
+    select {
+        appearance: none;
+        padding-left: 0 !important;
+        padding-right: 16px !important;
+        text-transform: uppercase;
+        color: $color__primary !important;
+        font-size: 16px !important;
+        letter-spacing: tracking(150);
+        border-bottom-color: $color__primary !important;
+        font-family: $font__family--body;
+        outline: none !important;
+        align-self: flex-end;
+        cursor: pointer;
+        background-image: url( 'data:image/svg+xml;base64, #{$svg__select-down}' );
+        background-repeat: no-repeat;
+        background-size: 8px;
+        background-position-x: calc(100% - 10px);
+        background-position-y: 50%;
+    }
+
+    .select-container {
+          min-height: 60px;
+
+        label {
+            font-size: 18px !important;
+            align-self: flex-end;
+        } 
+
+        @include screen--sm {
+              display: flex !important;
+              justify-content: space-between;
+
+              > * {
+                  flex-basis: 49%;
+              }
+        }
+
+        @include mobile-break {
+            margin-top: $gutter;
+        }
+    }
+
+    .vertical_radio {
+        margin-top: 20px;
+
+        @include mobile-break {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        @include screen--xxl {
+            margin-top: 60px;
+        }
+
+        .frm_primary_label {
+            font-size: 18px !important;
+            text-transform: uppercase;
+            margin-bottom: 20px !important;
+            flex-shrink: 0;
+        } 
+
+        .frm_opt_container {
+            @include mobile-break {
+                display: flex;
+                flex-wrap: wrap;
+                margin-left: $gutter;
+                justify-content: flex-end;
+
+                > div {
+                    margin-left: $gutter;
+                }
+            }
+
+            @include screen--xxl {
+                > div {
+                    margin-left: 75px;
+                }
+            }
+        }
+    }
+
+    .textarea-container {
+        margin-top: 20px;
+
+        @include mobile-break {
+            margin-top: 50px;
+        }
+
+        label {
+            font-size: 18px !important;
+            margin-bottom: 20px !important;
+        }
+
+        textarea {
+            min-height: 300px;
+
+            @include screen--xxl {
+                min-height: 580px;
+            }
+        }
+    }
+    
+  }

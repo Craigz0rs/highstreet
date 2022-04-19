@@ -1,0 +1,63 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 99;
+  transition: $transition;
+
+  @include screen--xl {
+    height: 120px;
+  }
+
+  @include screen--xxxxl {
+    height: 150px;
+  }
+
+  html.scrolled & {
+    background-color: $white;
+  }
+
+  body.page:not(.home) &, body.post-type-archive & {
+    background-color: $white;
+  }
+
+  &__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include screen--xxl {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+
+  &__branding {
+    display: block;
+    width: 200px;
+    z-index: 10;
+
+    @include screen--xl {
+      width: 250px;
+    }
+
+    @include screen--xxxxl {
+      width: 350px;
+    }
+
+    > img {
+
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      display: block;
+      width: 100%;
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,149 @@
+body {
+  font-family: $font__family--body;
+  font-weight: $font__weight--body;
+  font-size: $font__size--base;
+  color: $font__color--body;
+  line-height: (40 / 18);
+
+  @include mobile-break {
+    font-size: 18px;
+  }
+}
+
+p {
+  letter-spacing: tracking(50);
+  font-weight: $font__weight--light;
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 1px;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+    }
+  }
+}
+
+p.has-lead-font-size {
+  font-size: 18px;
+  line-height: (28 / 18);
+  font-weight: $font__weight--light;
+
+  @include mobile-break {
+    font-size: 26px;
+    line-height: 1.4;
+  }
+
+  @include screen--xxl {
+    font-size: 32px;
+    line-height: (45 / 32);
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $font__color--link;
+  transition: $transition;
+
+  &:focus, &:active, &:hover {
+    text-decoration: none;
+    color: $color__secondary;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $font__family--heading;
+  font-weight: $font__weight--heading;
+  color: $font__color--heading;
+  transition: 0.2s ease;
+
+  > sup {
+    font-family: $font__family--body;
+    font-weight: $font__weight--body;
+    color: $color__primary;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: tracking(150);
+
+    @include mobile-break {
+      font-size: 18px;
+    }
+  }
+
+  > a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+
+    &:hover, &:focus {
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+    }
+  }
+}
+
+h1 {
+  font-size: 38px;
+  line-height: (44 / 38);
+
+  @include mobile-break {
+    font-size: 64px;
+    line-height: 0.92;
+    max-width: 700px;
+  }
+  
+  @include screen--xxl {
+    font-size: 70px;
+    line-height: (87 / 82);
+  }
+
+  > sup {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  > br {
+    display: none;
+  }
+}
+
+h2 {
+  font-size: 32px;
+  line-height: (38 / 32);
+  color: $color__secondary;
+
+  @include mobile-break {
+    font-size: 45px;
+    line-height: 1.2;
+  }
+
+  @include screen--xxl {
+    font-size: 50px;
+    line-height: (56 / 50);
+  }
+}
+
+h3 {
+  font-size: 27px;
+
+  @include mobile-break {
+    font-size: 40px;
+  }
+
+  @include screen--xxl {
+    font-size: 50px;
+  }
+
+}
+
+h4 {
+  font-family: $font__family--body;
+  font-weight: $font__weight--body;
+  font-size: 14px;
+
+  @include mobile-break {
+    font-size: 18px;
+  }
+}

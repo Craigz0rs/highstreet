@@ -1,0 +1,65 @@
+.wp-block-button__link, input[type='submit'] {
+  padding: 15px 30px;
+  border: none;
+  background: $color__primary;
+  color: $grey;
+  font-family: $font__family--body;
+  font-weight: $font__weight--body;
+  font-size: 15px;
+  letter-spacing: tracking(150);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0;
+
+  &:focus, &:hover {
+    outline: 0;
+    background: $color__secondary;
+  }
+
+  div.is-style-dark & {
+    background: $color__secondary;
+
+    &:focus, &:hover {
+      background: $color__primary;
+    }
+  }
+
+  div.is-style-lets-chat & {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    background: transparent !important;
+    font-family: $font__family--heading;
+    font-weight: $font__weight--body;
+    font-size: 32px;
+    letter-spacing: 0;
+    text-transform: none;
+    margin: 0;
+    padding: 0;
+
+    > img {
+      height: 120px;
+      margin-left: $gutter;
+    }
+
+    @include mobile-break {
+      font-size: 55px;
+    }
+  }
+
+  div.is-style-outline & {
+    background: transparent;
+    border: 2px solid $color__primary;
+    color: $color__primary !important;
+
+    &:hover, &:focus {
+      background: $color__primary;
+      color: $white !important;
+    }
+  }
+}
+
+.wp-block-buttons {
+  margin-top: 40px;
+}
+

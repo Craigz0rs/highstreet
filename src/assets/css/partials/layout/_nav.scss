@@ -1,0 +1,311 @@
+.nav {
+  &__main{
+    > a {
+      display: none;
+      font-family: $font__family--heading;
+      font-weight: $font__weight--heading;
+      font-size: 19px;
+      letter-spacing: tracking(0);
+      color: $grey;
+      text-transform: uppercase;
+
+      &:hover {
+        color: $white;
+      }
+
+      @include screen--xl {
+        display: block;
+        position: absolute;
+        right: 160px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: right;
+      }
+    }
+  }
+
+  &__main-wrap {
+    background-color: $grey;
+    background-image: url('../images/hero-dotted-bg.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    left: 100%;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    padding: 125px $gutter 200px;
+    transition: 0.3s ease-in-out;
+
+    @include screen--xl {
+      position: relative;
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      top: auto;
+      left: auto;
+      width: auto;
+      height: auto;
+      padding: 0;
+      background-color: transparent;
+      background-image: none;
+    }
+
+    .menu-primary-container {
+      height: calc(100vh - 125px);
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+      @include screen--xl {
+        height: auto;
+        overflow: hidden;
+      }
+
+      > ul {
+        overflow: hidden;
+
+        @include screen--xl {
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          flex-wrap: nowrap;
+        }
+
+        > li {
+          opacity: 0;
+          transform: translateX(20px);
+          margin-bottom: 15px;
+          text-align: center;
+          line-height: 1.5;
+
+          &.current_page_item > a:after, &.current-menu-item > a:after {
+            @include screen--xl {
+              opacity: 1 !important;
+              width: 110%;
+            }
+          }
+
+          &:last-child {
+            padding: 0;
+            margin-top: 30px;
+
+            @include screen--xl {
+              margin-top: 0 !important;
+            }
+            
+            a {
+              border: 2px solid $color__primary;
+              margin: 0 auto;
+              display: block;
+              padding: 14px 30px 16px;
+              background-color: $color__primary;
+              width: fit-content;
+              color: $white;
+
+              @include screen--xxl {
+                color: $color__secondary;
+                background-color: transparent;
+                width: audo;
+                padding: 14px 16px 16px;
+                margin: 0;
+              }
+
+              &:hover, &:focus {
+                background: $color__primary;
+                color: $grey;
+              }
+
+              &:after {
+                display: none !important;
+              }
+            }
+          }
+
+          @include screen--xl {
+            position: relative;
+            opacity: 1;
+            transform: translate(0);
+            margin-bottom: 0;
+            margin-left: 25px;
+            line-height: 1;
+
+          }
+
+          @include screen--xxxxl {
+            margin-left: 40px;
+          }
+        }
+      }
+
+      a {
+        color: $color__secondary;
+        font-size: 33px;
+        font-family: $font__family--heading;
+        font-weight: $font__weight--heading;
+        letter-spacing: tracking(0);
+
+        @include screen--xl {
+          font-size: 15px;
+          font-family: $font__family--body;
+          font-weight: $font__weight--body;
+          letter-spacing: tracking(150);
+          text-transform: uppercase;
+
+          &:after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -15px;
+            width: 0;
+            height: 2px;
+            opacity: 0;
+            background-color: $color__primary;
+            transform: translateX(-50%);
+            transition: $transition;
+          }
+        }
+
+        &:hover, &:focus {
+          color: $color__primary;
+
+          &:after {
+            opacity: 1;
+            width: 110%;
+          }
+        }
+      }
+    }
+
+    .wp-block-social-links {
+      max-width: 300px;
+      justify-content: space-between !important;
+      margin: 20px auto !important;
+
+      li {
+        margin: 0 !important;
+      }
+
+      a {
+        padding: 0.55em !important;
+      }
+
+      svg {
+        fill: $color__secondary !important;
+      }
+
+      @include screen--xl {
+        display: none;
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: transparent;
+    border: 2px solid $color__primary;
+    border-radius: 0;
+    width: 43px;
+    height: 43px;
+    outline: none;
+    cursor: pointer;
+    z-index: 999;
+    transition: $transition;
+
+    @include screen--xl {
+      display: none;
+    }
+
+    &:hover {
+      // background: $grey;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    display: block;
+    height: 1px;
+    width: 18px;
+    background: transparent;
+    transition: 0.2s ease;
+
+    &:before {
+      position: absolute;
+      content: '';
+      top: -5px;
+      left: 0;
+      background: $color__secondary;
+      width: 18px;
+      height: 2px;
+      transition: 0.2s ease;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      top: 5px;
+      left: 0;
+      background: $color__secondary;
+      width: 18px;
+      height: 2px;
+      transition: 0.2s ease;
+    }
+
+
+    &-wrap {
+      position: relative;
+      bottom: 1px;
+      transition: 0.3s ease;
+      width: 18px;
+      height: auto;
+      margin: 0 auto;
+    }
+  }
+}
+
+.toggle-main-nav {
+  .nav__button {
+    background: $grey;
+  }
+
+  .nav__icon {
+    transition: 0.2s ease;
+
+    &:before {
+      top: 0;
+      transform: rotate(-45deg);
+      transform-origin: center;
+      transition: 0.2s ease;
+    }
+
+    &:after {
+      top: 0;
+      transform: rotate(45deg);
+      transform-origin: center;
+      transition: 0.2s ease;
+    }
+  }
+
+  .nav__main-wrap {
+    position: absolute;
+    left: 0;
+    transition: 0.3s ease-in-out;
+
+    @include screen--xl {
+      left: calc(100% - 765px);
+    }
+  }
+
+  &.animate {
+    .menu-item {
+      opacity: 1;
+      transform: translate(0);
+      transition: 0.4s ease-out;
+    }
+  }
+}
